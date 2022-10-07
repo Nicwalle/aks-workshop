@@ -6,9 +6,9 @@ labels: [
 ]
 body:
   - type: input
-    id: >>resource-group-name<<
+    id: resource-group-name
     attributes:
-      label: "resource-group-name"
+      label: ">>resource-group-name<<"
       description: Please enter a resource group name
       placeholder: k8s-workshop-rg
     validations:
