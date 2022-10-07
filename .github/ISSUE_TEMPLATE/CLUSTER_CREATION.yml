@@ -8,7 +8,7 @@ body:
   - type: input
     id: resource-group-name
     attributes:
-      label: ">>resource-group-name<<"
+      label: "resource-group-name"
       description: Please enter a resource group name
       placeholder: k8s-workshop-rg
     validations:
@@ -16,7 +16,7 @@ body:
   - type: dropdown
     id: location
     attributes:
-      label: ">>location<<"
+      label: "location"
       description: Cluster and resource group location
       multiple: false
       options:
@@ -27,7 +27,7 @@ body:
   - type: input
     id: cluster-name
     attributes:
-      label: ">>cluster-name<<"
+      label: "cluster-name"
       description: Please enter a cluster name
       placeholder: k8s-workshop-aks
     validations:
@@ -35,7 +35,7 @@ body:
   - type: input
     id: amount-nodes
     attributes:
-      label: ">>amount-nodes<<"
+      label: "amount-nodes"
       description: Please enter a number between 1 and 100
       placeholder: '3'
     validations:
@@ -43,5 +43,5 @@ body:
   - type: textarea
     id: comment
     attributes:
-      label: ">>comment<<"
+      label: "comment"
       description: Please enter a comment if needed...
