@@ -33,8 +33,8 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Here are the parsed fields:          
-            ```
-            ${{ steps.issue-parser.outputs.jsonString }}
-            ```
-            Cluster name ${{ steps.issue-parser.outputs.issueparser_cluster-name }}
+            Here is the information I got:
+            **Resource group name**: ${{ steps.issue-parser.outputs.issueparser_resource-group-name }}
+            **Location**: ${{ steps.issue-parser.outputs.issueparser_location }}
+            **Cluster name**: ${{ steps.issue-parser.outputs.issueparser_cluster-name }}
+            **Amount of nodes**: ${{ steps.issue-parser.outputs.issueparser_amount-nodes }}
