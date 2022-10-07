@@ -35,13 +35,18 @@ jobs:
           body: |
             Here are the parsed fields:
             ```
-            ${{ steps.parse.outputs.payload }}
+            ${{ steps.parser.outputs }}
+            ```
+            And
+            
+            ```
+            ${{ steps.parser.outputs.payload }}
             ```
             
           
       - name: Show parsed data JSON
         run: |
-          echo "${{ steps.parse.outputs.payload }}"
+          echo "${{ steps.parser.outputs.payload }}"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
