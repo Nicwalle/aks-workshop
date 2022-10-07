@@ -45,5 +45,3 @@ body:
     attributes:
       label: "Comment"
       description: Please enter a comment if needed...
-    validations:
-      required: true
