@@ -1,0 +1,49 @@
+name: "🧑‍💻 Create cluster"
+description: Create a new cluster with the right parameters
+title: "🐛 [CLUSTER] - <title>"
+labels: [
+  "bug"
+]
+body:
+  - type: input
+    id: resource-group-name
+    attributes:
+      label: "Resource group name"
+      description: Please enter a resource group name
+      placeholder: k8s-workshop-rg
+    validations:
+      required: true
+  - type: dropdown
+    id: location
+    attributes:
+      label: "Location"
+      description: Cluster and resource group location
+      multiple: false
+      options:
+        - West Europe
+        - East US
+    validations:
+      required: true
+  - type: input
+    id: cluster-name
+    attributes:
+      label: "Cluster name"
+      description: Please enter a cluster name
+      placeholder: k8s-workshop-aks
+    validations:
+      required: true
+  - type: input
+    id: amount-nodes
+    attributes:
+      label: "Amount of nodes"
+      description: Please enter a number between 1 and 100
+      placeholder: 3
+    validations:
+      required: true
+  - type: textarea
+    id: comment
+    attributes:
+      label: "Comment"
+      description: Please enter a comment if needed...
+    validations:
+      required: true
