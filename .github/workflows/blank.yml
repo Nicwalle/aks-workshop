@@ -21,13 +21,13 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             **Hey there!** I'm taking good care of your issue and will create the cluster.
-            
-      - name: Issue Form Body Parser
-        id: parser
-        uses: peter-murray/issue-forms-body-parser@v2.0.0
-        with:
-          issue_id: ${{ github.event.issue.number }}
           
+      - name: GitHub Issue Parser
+        id: issue-parser
+        uses: stefanbuck/github-issue-parser@v2   
+        with:
+          template-path: .github/ISSUE_TEMPLATE/CLUSTER_CREATION.yml
+        
       - name: Add comment
         uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
         with:
@@ -35,17 +35,6 @@ jobs:
           body: |
             Here are the parsed fields:          
             ```
-            ${{ steps.parser.outputs.payload }}
+            ${{ steps.issue-parser.outputs.jsonString }}
             ```
-            
-      - name: GitHub Issue Parser
-        id: issue-parser
-        uses: stefanbuck/github-issue-parser@v2   
-        with:
-          template-path: .github/ISSUE_TEMPLATE/CLUSTER_CREATION.yml
-        
-      - run: echo '${{ steps.issue-parser.outputs.jsonString }}'
-          
-      - name: Show parsed data JSON
-        run: |
-          echo "${{ steps.parser.outputs.payload }}"
+            Cluster name ${{ steps.issue-parser.outputs.issueparser_cluster_name }}
