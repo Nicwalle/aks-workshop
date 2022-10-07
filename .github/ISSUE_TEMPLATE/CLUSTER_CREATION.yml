@@ -2,7 +2,7 @@ name: "🧑‍💻 Create cluster"
 description: Create a new cluster with the right parameters
 title: "🐛 [CLUSTER] - <title>"
 labels: [
-  "bug"
+  "create-cluster"
 ]
 body:
   - type: input
