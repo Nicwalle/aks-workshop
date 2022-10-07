@@ -28,8 +28,20 @@ jobs:
         with:
           issue_id: ${{ github.event.issue.number }}
           
-      - name: Run a one-line script
-        run: echo "${steps.parser.outputs.payload}"
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Here are the parsed fields:
+            ```
+            ${{ steps.parse.outputs.payload }}
+            ```
+            
+          
+      - name: Show parsed data JSON
+        run: |
+          echo "${{ steps.parse.outputs.payload }}"
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
