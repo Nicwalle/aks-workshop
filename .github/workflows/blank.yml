@@ -14,9 +14,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12
       
       - name: Add comment
         uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
@@ -43,7 +40,7 @@ jobs:
             
       - name: GitHub Issue Parser
         id: issue-parser
-        uses: stefanbuck/github-issue-parser@v2.0.3    
+        uses: stefanbuck/github-issue-parser@v2   
         with:
           template-path: .github/ISSUE_TEMPLATE/CLUSTER_CREATION.yml
         
