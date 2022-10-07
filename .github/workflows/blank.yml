@@ -37,4 +37,4 @@ jobs:
             ```
             ${{ steps.issue-parser.outputs.jsonString }}
             ```
-            Cluster name ${{ steps.issue-parser.outputs.issueparser_cluster_name }}
+            Cluster name ${{ steps.issue-parser.outputs.issueparser_cluster-name }}
