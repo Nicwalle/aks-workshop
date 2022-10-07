@@ -15,11 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
-      - name: Comment issue
-        uses: kyoncy/issue-comment-actions@v1
+      - name: Add comment
+        uses: peter-evans/create-or-update-comment@a35cf36e5301d70b76f316e867e7788a55a31dae
         with:
-          message: "Hey, I am now working on your cluster creation, let's see what I can do for you"
-
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            **Hey there!** I'm taking good care of your issue and will create the cluster.
       - name: Run a one-line script
         run: echo Hello, world!
 
